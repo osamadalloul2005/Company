@@ -1,0 +1,404 @@
+/* Core Style ---------------------------------*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align:center;
+}
+h1,h2,h3{
+  text-transform:uppercase;
+}
+p{
+  text-transform:capitalize;
+}
+body{
+  background:#000;
+}
+#main-wrapper{
+  display:grid;
+  grid-template-columns: repeat(6, minmax(auto, 70%));
+  grid-template-rows:1fr repeat(5,minmax(auto,70%)) 1fr;
+  grid-template-areas:
+    "header header header header header header"
+    "cover cover cover cover cover cover"
+    ". about about about about ."
+    ". project project project project ."
+    ". teams teams teams teams ."
+    ". contact contact contact contact ."
+    "footer footer footer footer footer  footer"
+  ;
+  margin:auto;
+}
+/* Header ------------------------------------*/
+  header{
+    background:#333;
+    grid-area:header;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:10px;
+  }
+  header .logo{
+    color:#fff;
+  }
+  header .list-items li{
+    list-style:none;
+    margin:0 15px;
+    padding:15px 0;
+  }
+  header .list-items li a{
+    text-decoration:none;
+    text-transform:uppercase;
+    color:#fff;
+    font-weight:bold;
+    background:#000;
+    padding:10px;
+    border-radius:5px;
+    transition:.5s ease-in-out;
+  }
+  header .list-items li a:hover{
+    background-color:#fff;
+    color:#000;
+  }
+  header .list-items ul{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  header .icon-bar{
+    color:#fff;
+    font-size:1.5em;
+    display:none;
+  }
+/* End Header */
+
+/* Start Page Cover ----------------------*/
+#cover-page{
+  grid-area:cover;
+  background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.2)), url(../images/cover.jpg);
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  height:80vh;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  position:relative;
+  margin-bottom:20px;
+}
+.cover-chevron-L .fa{
+  color:#fff;
+  margin-left:30px;
+  background:#000;
+  padding:10px;
+  cursor:pointer;
+}
+.cover-content{
+  color:#fff;
+  background:rgba(0,0,0,.4);
+  width:250px;
+  padding:20px 10px;
+}
+.cover-chevron-r .fa{
+  color:#fff;
+  margin-right:30px;
+  background:#000;
+  padding:10px;
+  cursor:pointer;
+}
+#cover-page .btn{
+  position:absolute;
+  top:80%;
+  left:50%;
+  transform:translate(-50%);
+}
+#cover-page .btn a{
+  text-decoration:none;
+  color:#000;
+  font-size:1.5em;
+  background-color:#fff;
+  padding:10px 20px;
+  border-radius:5px;
+  transition:.5s ease;
+}
+#cover-page .btn a:hover{
+  background-color:#000;
+  color:#fff;
+}
+/* End Page Cover */
+
+/* Start About ------------------------------*/
+#section-about{
+  grid-area:about;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  /* flex-wrap:wrap; */
+}
+.about-content{
+  background-color:#fff;
+  padding:15px 15px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.about-ceo{
+  width:100%;
+  height:100%;
+}
+.about-ceo img{
+  width:100%;
+  height:100%;
+}
+/* End About */
+
+/* Start Project --------------------------------*/
+#section-project{
+  grid-area:project;
+}
+.project-title{
+  color:#000;
+  background:#fff;
+  display:inline-block;
+  border-radius:5px;
+  padding:8px;
+  margin:20px 0;
+}
+.project-content{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  /* flex-wrap:wrap; */
+  gap:5px;
+}
+
+.project-content img{
+  max-width:100%;
+}
+
+.project-content p{
+  color:#000;
+  background:#fff;
+  padding:10px 0
+}
+/* End Project */
+
+/* Start Team ------------------------------ */
+#section-teams{
+  grid-area:teams;
+}
+.team-content{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  column-gap:5px;
+}
+.team-titel{
+  color:#000;
+  background:#fff;
+  display:inline-block;
+  border-radius:5px;
+  padding:8px 25px;
+  margin:20px 0;
+}
+
+.team-content h3{
+  color:#fff;
+  margin:10px 0;
+}
+.team-img img{
+  width:100%;
+}
+.team-content p{
+  color:#000;
+  background:#fff;
+  padding:10px 0;
+}
+
+/* End Team  */
+
+/* Start Contact --------------------------*/
+#section-contact{
+  grid-area:contact;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  margin-top:40px;
+}
+.contact-box-a{
+  background-color:#fff;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.contact-box-a h2{
+  padding:20px;
+}
+.contact-soial-media li{
+  list-style:none;
+}
+
+.contact-soial-media a{
+  text-decoration:none;
+  color:#fff;
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #000;
+  margin: 2px 0;
+}
+.contact-box-b{
+  background-color:#777;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.contact-box-b h2{
+  padding:20px;
+}
+/* End Contact */
+
+/* strat footer */
+#section-footer{
+  grid-area:footer;
+  color:#fff;
+}
+.footer-title p{
+  padding:20px 0;
+  font-size:1.2em;
+  font-weight:bold;
+}
+
+/* Strat Header Media Query --------------*/
+@media screen and (min-width:577px) and (max-width:768px){
+  #main-wrapper{
+    grid-template-areas:
+      "header header header header header header"
+      "cover cover cover cover cover cover"
+      "about about about about about about"
+      "project project project project project project"
+      "teams teams teams teams teams teams"
+      "contact contact contact contact contact contact"
+      "footer footer footer footer footer  footer"
+    ;
+    margin:auto;
+  }
+  header{
+    background:#000;
+  }
+  header .list-items{
+    display:none;
+  }
+  header .icon-bar{
+    display:block;
+  }
+
+  #section-about{
+    flex-direction:column;
+  }
+  .project-content{
+    flex-direction:column;
+  }
+  .team-content{
+    flex-direction:column;
+  }
+  #section-contact{
+    flex-direction:column;
+  }
+}
+
+@media screen and (max-width:576px){
+  #main-wrapper{
+    grid-template-areas:
+      "header header header header header header"
+      "cover cover cover cover cover cover"
+      "about about about about about about"
+      "project project project project project project"
+      "teams teams teams teams teams teams"
+      "contact contact contact contact contact contact"
+      "footer footer footer footer footer  footer"
+    ;
+    margin:auto;
+  }
+  header{
+    background:#000;
+  }
+  header .list-items{
+    display:none;
+  }
+  header .icon-bar{
+    display:block;
+  }
+
+  #section-about{
+    flex-direction:column;
+  }
+  .project-content{
+    flex-direction:column;
+  }
+  .team-content{
+    flex-direction:column;
+  }
+  #section-contact{
+    flex-direction:column;
+  }
+
+}
+@media screen and (max-width:480px){
+
+  #main-wrapper{
+    grid-template-areas:
+      "header header header header header header"
+      "cover cover cover cover cover cover"
+      "about about about about about about"
+      "project project project project project project"
+      "teams teams teams teams teams teams"
+      "contact contact contact contact contact contact"
+      "footer footer footer footer footer  footer"
+    ;
+    margin:auto;
+  }
+
+  header{
+    background:#000;
+  }
+  header .list-items{
+    display:none;
+  }
+  header .icon-bar{
+    display:block;
+  }
+  #cover-page{
+    display:none;
+  }
+  #section-about{
+    flex-direction:column;
+  }
+  .project-content{
+    flex-direction:column;
+  }
+  .team-content{
+    flex-direction:column;
+  }
+  #section-contact{
+    flex-direction:column;
+  }
+}
